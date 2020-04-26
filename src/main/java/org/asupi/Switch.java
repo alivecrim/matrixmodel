@@ -1,8 +1,28 @@
 package org.asupi;
 
+import java.util.Objects;
+
 public class Switch {
     private Integer number;
     private Integer position;
+
+    public Switch() {
+        
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Switch aSwitch = (Switch) o;
+        return number.equals(aSwitch.number) &&
+                position.equals(aSwitch.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, position);
+    }
 
     public Switch(Integer number, Integer position) {
         this.number = number;

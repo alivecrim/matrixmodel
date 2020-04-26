@@ -1,8 +1,14 @@
 package org.asupi;
 
 public class MatrixModel {
-    OutputSwitchMatrix outPutSwitchMatrix = new OutputSwitchMatrix();
+    OutputSwitchMatrix outPutSwitchMatrix;
+
+    public MatrixModel() {
+        outPutSwitchMatrix = new OutputSwitchMatrix();
+    }
+
     public void setPosition(int inputPort, int outputPort) {
+
 
     }
 
