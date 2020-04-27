@@ -1,4 +1,4 @@
-package org.asupi.switchmatrix4_36;
+package org.asupi;
 
 public class Main {
     public static void main(String[] args) {
