@@ -1,5 +1,6 @@
 package org.asupi;
 
+import org.asupi.switchmatrix4_36.Switch;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package org.asupi;
+package org.asupi.switchmatrix4_36;
 
 import java.util.Objects;
 

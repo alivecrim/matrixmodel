@@ -1,8 +1,8 @@
 package org.asupi;
 
+import org.asupi.switchmatrix4_36.OutputSwitchMatrix;
+import org.asupi.switchmatrix4_36.PositionState;
 import org.junit.jupiter.api.Test;
-
-import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
