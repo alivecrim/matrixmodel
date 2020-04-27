@@ -16,6 +16,12 @@ public class MatrixModel {
     }
 
     public Object getOut(int i) {
+        for (Switch item:
+        outPutSwitchMatrix.getMatrix()) {
+            if(item.getPosition() ==  i){
+                return item.getNumber();
+            }
+        }
 
         return 5;
     }

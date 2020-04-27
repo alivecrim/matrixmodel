@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class InputSwitchMatrix {
-    List<Switch> matrix = new ArrayList<>();
+    private List<Switch> matrix = new ArrayList<>();
 
     public InputSwitchMatrix(Integer numStart) {
         for (int i=0;i<7;i++){

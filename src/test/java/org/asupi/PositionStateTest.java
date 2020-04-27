@@ -8,7 +8,8 @@ class PositionStateTest {
     @Test
     void positionStateTest(){
         PositionState positionState = new PositionState();
-        positionState.setState("");
+        positionState.setState("1:1");
+        assertEquals(1, positionState.getState().get(1));
     }
 
 }

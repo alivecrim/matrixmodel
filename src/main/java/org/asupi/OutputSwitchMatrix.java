@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class OutputSwitchMatrix {
-    List<Switch> matrix = new ArrayList<>();
+    private List<Switch> matrix = new ArrayList<>();
 
     public OutputSwitchMatrix() {
         for (int i=0;i<36;i++){
