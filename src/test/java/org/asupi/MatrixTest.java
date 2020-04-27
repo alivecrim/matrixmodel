@@ -37,6 +37,7 @@ class MatrixTest {
         List<Switch> diff = matrixModel.compareMatrix(matrixModel1);
         assertEquals(12, diff.size());
         assertEquals(new Switch(1,6), diff.get(0));
+        System.out.println(diff);
     }
 
     @Test
