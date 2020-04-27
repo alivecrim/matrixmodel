@@ -10,8 +10,8 @@ class MatrixTest {
     void testInnerPosition(){
         MatrixModel matrixModel = new MatrixModel();
 
-        matrixModel.setPosition(1,5);
-        assertEquals(5,matrixModel.getOut(1));
+        matrixModel.setPosition(2,15);
+        assertEquals(15,matrixModel.getOut(2));
     }
 
 

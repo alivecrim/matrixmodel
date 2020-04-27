@@ -11,25 +11,25 @@ class OutputSwitchMatrixTest {
     void test1(){
         OutputSwitchMatrix outputSwitchMatrix = new OutputSwitchMatrix();
         assertEquals(36, outputSwitchMatrix.getMatrix().size());
-        outputSwitchMatrix.setPosition(1,4);
-        assertEquals(4,outputSwitchMatrix.getPosition(1));
+        outputSwitchMatrix.setPosition(29,4);
+        assertEquals(4,outputSwitchMatrix.getPosition(29));
     }
     @Test
     void testSetMultiPosition(){
         PositionState positionState = new PositionState();
-        positionState.setState("1:1,2:3,5:3,9:3");
+        positionState.setState("29:1,30:3,31:3,32:3");
         OutputSwitchMatrix outputSwitchMatrix = new OutputSwitchMatrix();
         outputSwitchMatrix.changeState(positionState);
-        assertEquals(-1,outputSwitchMatrix.getPosition(1));
-        assertEquals(-1,outputSwitchMatrix.getPosition(2));
-        assertEquals(-1,outputSwitchMatrix.getPosition(5));
-        assertEquals(-1,outputSwitchMatrix.getPosition(9));
+        assertEquals(1,outputSwitchMatrix.getPosition(29));
+        assertEquals(3,outputSwitchMatrix.getPosition(30));
+        assertEquals(3,outputSwitchMatrix.getPosition(31));
+        assertEquals(3,outputSwitchMatrix.getPosition(32));
 
-        outputSwitchMatrix.changeState(new PositionState("1:2,2:3,3:4,4:5"));
-        assertEquals(2,outputSwitchMatrix.getPosition(1));
-        assertEquals(3,outputSwitchMatrix.getPosition(2));
-        assertEquals(4,outputSwitchMatrix.getPosition(3));
-        assertEquals(5,outputSwitchMatrix.getPosition(4));
+        outputSwitchMatrix.changeState(new PositionState("29:2,30:3,31:4,41:5"));
+        assertEquals(2,outputSwitchMatrix.getPosition(29));
+        assertEquals(3,outputSwitchMatrix.getPosition(30));
+        assertEquals(4,outputSwitchMatrix.getPosition(31));
+        assertEquals(5,outputSwitchMatrix.getPosition(41));
 
 
     }

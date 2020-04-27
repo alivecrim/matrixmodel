@@ -5,9 +5,15 @@ import java.util.List;
 import java.util.Map;
 
 public class InputSwitchMatrix {
+    private int absolute_start;
     private List<Switch> matrix = new ArrayList<>();
 
+    public int getAbsolute_start() {
+        return absolute_start;
+    }
+
     public InputSwitchMatrix(Integer numStart) {
+        absolute_start=numStart;
         for (int i=0;i<7;i++){
             matrix.add(new Switch(i+numStart,1));
         }

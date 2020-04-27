@@ -44,4 +44,12 @@ public class Switch {
     public void setPosition(Integer position) {
         this.position = position;
     }
+
+    @Override
+    public String toString() {
+        return "Switch{" +
+                "number=" + number +
+                ", position=" + position +
+                '}';
+    }
 }
