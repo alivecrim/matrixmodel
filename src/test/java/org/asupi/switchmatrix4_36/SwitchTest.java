@@ -1,10 +1,9 @@
-package org.asupi;
+package org.asupi.switchmatrix4_36;
 
-import org.asupi.switchmatrix4_36.Switch;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SwitchTest {
     Switch Sswitch;

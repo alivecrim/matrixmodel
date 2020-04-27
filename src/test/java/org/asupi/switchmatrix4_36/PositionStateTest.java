@@ -1,9 +1,8 @@
-package org.asupi;
+package org.asupi.switchmatrix4_36;
 
-import org.asupi.switchmatrix4_36.PositionState;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PositionStateTest {
     @Test

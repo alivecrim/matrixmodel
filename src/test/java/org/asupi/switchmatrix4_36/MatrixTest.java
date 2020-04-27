@@ -1,10 +1,6 @@
-package org.asupi;
+package org.asupi.switchmatrix4_36;
 
 
-import org.asupi.switchmatrix4_36.MatrixModel;
-import org.asupi.switchmatrix4_36.MatrixModelImpl;
-import org.asupi.switchmatrix4_36.PositionState;
-import org.asupi.switchmatrix4_36.Switch;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
