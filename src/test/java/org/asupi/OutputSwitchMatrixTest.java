@@ -20,10 +20,10 @@ class OutputSwitchMatrixTest {
         positionState.setState("1:1,2:3,5:3,9:3");
         OutputSwitchMatrix outputSwitchMatrix = new OutputSwitchMatrix();
         outputSwitchMatrix.changeState(positionState);
-        assertEquals(1,outputSwitchMatrix.getPosition(1));
-        assertEquals(3,outputSwitchMatrix.getPosition(2));
-        assertEquals(3,outputSwitchMatrix.getPosition(5));
-        assertEquals(3,outputSwitchMatrix.getPosition(9));
+        assertEquals(-1,outputSwitchMatrix.getPosition(1));
+        assertEquals(-1,outputSwitchMatrix.getPosition(2));
+        assertEquals(-1,outputSwitchMatrix.getPosition(5));
+        assertEquals(-1,outputSwitchMatrix.getPosition(9));
 
         outputSwitchMatrix.changeState(new PositionState("1:2,2:3,3:4,4:5"));
         assertEquals(2,outputSwitchMatrix.getPosition(1));
