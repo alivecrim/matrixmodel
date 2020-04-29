@@ -1,30 +1,25 @@
-package org.asupi.switchmatrix4_36;
+package org.asupi.switchmatrix4_36.switchmatrixio;
 
-import java.util.HashMap;
+import org.asupi.switchmatrix4_36.PositionState;
+import org.asupi.switchmatrix4_36.Switch;
+
 import java.util.Map;
 
-public class OutputSwitchMatrix {
-    private Map<Integer, Switch> matrix;
-    private int absolute_start = 29;
+public abstract class SwitchMatrixAbstract implements SwitchMatrix {
+    int absolute_start;
+    Map<Integer, Switch> matrix;
 
-    public OutputSwitchMatrix() {
-        matrix = new HashMap<>();
-        for (int i = absolute_start; i < absolute_start + 36; i++) {
-            matrix.put(i, new Switch(i, 0));
-        }
-    }
-
+    @Override
     public Map<Integer, Switch> getMatrix() {
         return matrix;
     }
 
-
+    @Override
     public void setPosition(int switchNumber, int position) {
-        Switch item;
-        if ((item = matrix.get(switchNumber)) != null)
-            item.setPosition(position);
+        matrix.get(switchNumber).setPosition(position);
     }
 
+    @Override
     public Integer getPosition(int switchNumber) {
         Switch item;
         if ((item = matrix.get(switchNumber)) != null)
@@ -33,6 +28,7 @@ public class OutputSwitchMatrix {
             return -1;
     }
 
+    @Override
     public void changeState(PositionState positionState) {
         Map<Integer, Integer> state = positionState.getState();
         for (Integer key : state.keySet()) {

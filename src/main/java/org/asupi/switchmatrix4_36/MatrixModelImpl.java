@@ -1,23 +1,27 @@
 package org.asupi.switchmatrix4_36;
 
+import org.asupi.switchmatrix4_36.switchmatrixio.SwitchMatrix;
+import org.asupi.switchmatrix4_36.switchmatrixio.SwitchMatrixInput;
+import org.asupi.switchmatrix4_36.switchmatrixio.SwitchMatrixOutput;
+
 import java.util.*;
 
 public class MatrixModelImpl implements MatrixModel {
-    private OutputSwitchMatrix outPutSwitchMatrix;
-    private List<InputSwitchMatrix> inputSwitchMatrices;
+    private SwitchMatrix outPutSwitchMatrix;
+    private List<SwitchMatrix> inputSwitchMatrices;
     private Map<Integer, Switch> fullSwitchList;
 
-    public MatrixModelImpl() {
+    MatrixModelImpl() {
         inputSwitchMatrices = new ArrayList<>();
-        outPutSwitchMatrix = new OutputSwitchMatrix();
-        inputSwitchMatrices.add(new InputSwitchMatrix(8));
-        inputSwitchMatrices.add(new InputSwitchMatrix(1));
-        inputSwitchMatrices.add(new InputSwitchMatrix(15));
-        inputSwitchMatrices.add(new InputSwitchMatrix(22));
+        outPutSwitchMatrix = new SwitchMatrixOutput();
+        inputSwitchMatrices.add(new SwitchMatrixInput(8));
+        inputSwitchMatrices.add(new SwitchMatrixInput(1));
+        inputSwitchMatrices.add(new SwitchMatrixInput(15));
+        inputSwitchMatrices.add(new SwitchMatrixInput(22));
 
         fullSwitchList = new HashMap<>();
         fullSwitchList.putAll(outPutSwitchMatrix.getMatrix());
-        inputSwitchMatrices.forEach((inputSwitchMatrix) -> inputSwitchMatrix.getMatrix().forEach((sw) -> {
+        inputSwitchMatrices.forEach((inputSwitchMatrix) -> inputSwitchMatrix.getMatrix().forEach((k, sw) -> {
             fullSwitchList.put(sw.getNumber(), sw);
         }));
 
@@ -40,19 +44,20 @@ public class MatrixModelImpl implements MatrixModel {
     }
 
     @Override
-    public void setPosition(int inputPort, int outputPort) {
+    public void setPositionSingleSwitch(int inputPort, int outputPort) {
         int tmp = (int) Math.ceil(outputPort / 6.0);
         int outPosition = getOutPosition(inputPort);
         outPutSwitchMatrix.getMatrix().get(outputPort + 28).setPosition(outPosition);
-        List<Switch> l = inputSwitchMatrices.get(inputPort - 1).getMatrix();
+        List<Switch> l = new ArrayList<>(inputSwitchMatrices.get(inputPort - 1).getMatrix().values());
         Switch s = l.get(0);
         s.setPosition(tmp);
         int pos = outputPort - ((tmp - 1) * 6);
         l.get(tmp).setPosition(pos);
     }
-@Override
+
+    @Override
     public Integer getPosition(int i) {
-        InputSwitchMatrix input = inputSwitchMatrices.get(i - 1);
+        SwitchMatrix input = inputSwitchMatrices.get(i - 1);
         Switch firstLayerSwitch = input.getMatrix().get(0);
         Integer firstLayerSwitchPosition = firstLayerSwitch.getPosition();
         Switch secondLayerSwitch = input.getMatrix().get(firstLayerSwitchPosition);

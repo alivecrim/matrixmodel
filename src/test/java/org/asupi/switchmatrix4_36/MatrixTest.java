@@ -12,13 +12,13 @@ class MatrixTest {
     void testInnerPosition() {
         MatrixModel matrixModel = new MatrixModelImpl();
 
-        matrixModel.setPosition(2,5);
+        matrixModel.setPositionSingleSwitch(2, 5);
         assertEquals(5,matrixModel.getPosition(2));
-        matrixModel.setPosition(1, 32);
+        matrixModel.setPositionSingleSwitch(1, 32);
         assertEquals(32, matrixModel.getPosition(1));
-        matrixModel.setPosition(3, 19);
+        matrixModel.setPositionSingleSwitch(3, 19);
         assertEquals(19, matrixModel.getPosition(3));
-        matrixModel.setPosition(4, 11);
+        matrixModel.setPositionSingleSwitch(4, 11);
         assertEquals(11, matrixModel.getPosition(4));
     }
     @Test
@@ -26,10 +26,10 @@ class MatrixTest {
         MatrixModel matrixModel = new MatrixModelImpl();
         MatrixModel matrixModel1 = new MatrixModelImpl();
 
-        matrixModel1.setPosition(1,32);
-        matrixModel1.setPosition(2,33);
-        matrixModel1.setPosition(3,34);
-        matrixModel1.setPosition(4,35);
+        matrixModel1.setPositionSingleSwitch(1, 32);
+        matrixModel1.setPositionSingleSwitch(2, 33);
+        matrixModel1.setPositionSingleSwitch(3, 34);
+        matrixModel1.setPositionSingleSwitch(4, 35);
         List<Switch> diff = matrixModel.compareMatrix(matrixModel1);
         assertEquals(12, diff.size());
         assertEquals(new Switch(1,6), diff.get(0));

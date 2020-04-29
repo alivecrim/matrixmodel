@@ -8,9 +8,9 @@ public interface MatrixModel {
 
     List<Switch> compareMatrix(MatrixModel model);
 
-    void setPosition(int inputPort, int outputPort);
+    void setPositionSingleSwitch(int inputPort, int outputPort);
 
-    Integer getPosition(int i);
+    Integer getPosition(int inputPort);
 
     void setState(PositionState positionState);
 
